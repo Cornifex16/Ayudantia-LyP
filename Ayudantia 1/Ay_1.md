@@ -16,9 +16,9 @@ Partiendo desde la seccion Data, tambien conocida como .data o initialized data 
 
 **Mea culpa**: Cometi un error en la ayudantia al señalar al heap como una estructura de arbol binaria, de la misma manera eso hace que no sea un registro mas rapido que el stack, pero si es un registro mas grande que el stack.
 
-La seccion del Heap es una de las mas importantes en C, ya que tiene mayor tamaño y es donde se guardan los datos de los punteros al crearlos con malloc u otros. El heap no tiene una estructura de organizacion definida.
+La seccion del Heap es una de las mas importantes en C, ya que tiene mayor tamaño y es donde se reservan los datos de los punteros al crearlos con malloc u otros. El heap no tiene una estructura de organizacion definida y es dependiente del programador y el OS a la hora de manejarlo.
 ### Stack
-La seccion del stack es donde se guardan las variables dentro de una funcion, ademas que se guardan los punteros en ese segmento (0xffffffff) y las direcciones de las llamadas de funcion con sus parametros. 
+La seccion del stack es donde se guardan las variables dentro de una funcion, ademas que se guardan los punteros en ese segmento (ejemplo de puntero: 0xffffffff) y las direcciones de las llamadas de funcion con sus parametros. Sigue una organizacion LIFO, siendo rapido en su ejecucion.
 
 ## Manejo de memoria
 
