@@ -15,7 +15,7 @@ Partiendo desde la seccion Data, tambien conocida como .data o initialized data 
 ### Heap
 La seccion del Heap es una de las mas importantes en C, ya que esta es extremadamente rapida para su busqueda y es donde se guardan los datos de los punteros al crearlos con malloc u otros. La estructura de datos de un Heap se ve de la siguiente manera
 
-![Imagen de heap](https://upload.wikimedia.org/wikipedia/commons/c/c4/Max-Heap-new.svg)
+![Imagen de heap](Max-Heap-new.png)
 
 Como es un arbol binario entonces el acto de recorrerlo para encontrar el dato especifico es rapido, pudiendo saltar rapidamente entre niveles, esta es una de las razones por las que el alocar memoria y trabajar con punteros es mas optimo en C que trabajar con variables simples dentro del stack.
 ### Stack
@@ -41,5 +41,7 @@ IMPORTANTE: si se usa ```malloc``` entonces siempre se tiene que liberar la memo
 
 ## Recursos adicionales
 [vision general segmentos de datos](https://www.geeksforgeeks.org/c/memory-layout-of-c-program/)
+
 [vision detallada de DATA y BSS](https://medium.com/@johnehk86/66-what-are-memory-and-sections-text-data-bss-rodata-etc-e134bd5b9ccd)
+
 [Repositorio de ejemplo de una simulacion en C](https://github.com/Cornifex16/Din-mica-de-minor-a-en-grafos-no-completos.git)
