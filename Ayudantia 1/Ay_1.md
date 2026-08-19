@@ -13,7 +13,7 @@ En donde la direccion de memoria mas baja y cercana a la cpu es la de texto, en 
 ### Data y BSS
 Partiendo desde la seccion Data, tambien conocida como .data o initialized data esta es donde se almacenan las variables globales, osea que existen fuera de las funciones y permanecen entre procesos, como las variables ```static```. Luego esta la seccion BSS, esta es similar a la seccion Data, pero son variables no inicializadas, osea que no tienen un valor al crearlas.
 ### Heap
-La seccion del Heap es una de las mas importantes en C, ya que esta es extremadamente rapida para su busqueda y es donde se guardan los datos de los punteros al crearlos con malloc u otros. La estructura de datos de u Heap se ve de la siguiente manera
+La seccion del Heap es una de las mas importantes en C, ya que esta es extremadamente rapida para su busqueda y es donde se guardan los datos de los punteros al crearlos con malloc u otros. La estructura de datos de un Heap se ve de la siguiente manera
 
 ![Imagen de heap](https://upload.wikimedia.org/wikipedia/commons/c/c4/Max-Heap-new.svg)
 
@@ -36,3 +36,10 @@ Para manejar la memoria de manera efectiva en C uno tiene que tener en cuenta co
 
 ### alocar la memoria
 Uno para poder alocar memoria en C tiene que usar la funcion ```malloc```, esto abre un espacio de memoria y la reserva exclusivamente para esa variable, el argumento que se le entrega al ```malloc``` define que tanto espacio de memoria se reserva, medido siempre en bytes. En caso de usar una estructura de datos personalizada 'aka' ```struct``` entonces uno reserva memoria del tamaño de la suma de sus componentes.
+
+IMPORTANTE: si se usa ```malloc``` entonces siempre se tiene que liberar la memoria con ```free``` sino se puede caer en errores de memory leak, causando que ocupe espacio en memoria incluso cuando termine el proceso. De la misma manera hay que tener cuidado en el traspaso de punteros, si se realiza de manera incorrecta y se pierde la direccion de memoria entonces queda un puntero vacio y los datos huerfanos.
+
+## Recursos adicionales
+[vision general segmentos de datos](https://www.geeksforgeeks.org/c/memory-layout-of-c-program/)
+[vision detallada de DATA y BSS](https://medium.com/@johnehk86/66-what-are-memory-and-sections-text-data-bss-rodata-etc-e134bd5b9ccd)
+[Repositorio de ejemplo de una simulacion en C](https://github.com/Cornifex16/Din-mica-de-minor-a-en-grafos-no-completos.git)
