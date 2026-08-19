@@ -13,11 +13,10 @@ En donde la direccion de memoria mas baja y cercana a la cpu es la de texto, en 
 ### Data y BSS
 Partiendo desde la seccion Data, tambien conocida como .data o initialized data esta es donde se almacenan las variables globales, osea que existen fuera de las funciones y permanecen entre procesos, como las variables ```static```. Luego esta la seccion BSS, esta es similar a la seccion Data, pero son variables no inicializadas, osea que no tienen un valor al crearlas.
 ### Heap
-La seccion del Heap es una de las mas importantes en C, ya que esta es extremadamente rapida para su busqueda y es donde se guardan los datos de los punteros al crearlos con malloc u otros. La estructura de datos de un Heap se ve de la siguiente manera
 
-![Imagen de heap](Max-Heap-new.png)
+**Mea culpa**: Cometi un error en la ayudantia al señalar al heap como una estructura de arbol binaria, de la misma manera eso hace que no sea un registro mas rapido que el stack, pero si es un registro mas grande que el stack.
 
-Como es un arbol binario entonces el acto de recorrerlo para encontrar el dato especifico es rapido, pudiendo saltar rapidamente entre niveles, esta es una de las razones por las que el alocar memoria y trabajar con punteros es mas optimo en C que trabajar con variables simples dentro del stack.
+La seccion del Heap es una de las mas importantes en C, ya que tiene mayor tamaño y es donde se guardan los datos de los punteros al crearlos con malloc u otros. El heap no tiene una estructura de organizacion definida.
 ### Stack
 La seccion del stack es donde se guardan las variables dentro de una funcion, ademas que se guardan los punteros en ese segmento (0xffffffff) y las direcciones de las llamadas de funcion con sus parametros. 
 
