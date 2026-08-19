@@ -62,8 +62,10 @@ int main(void) {
     funcion_ejemplo();
     funcion_ejemplo();
 
-    printf("int: %d\n", sizeof(int));
-    printf("char: %d\n", sizeof(char));
+    printf("int: %d bytes\n", sizeof(int));
+    printf("char: %d bytes\n", sizeof(char));
+    printf("float: %d bytes\n", sizeof(float));
+    printf("double: %d bytes\n", sizeof(double));
 
     free(puntero_heap);
 

@@ -1,6 +1,38 @@
 # Ayudantia 1 (19/08)
 
+Comando para compilar el codigo: ```gcc Variable.c -o variable```
+
+Comando para ejecutar el codigo: ```./variable```
+
 ## Datos en Memoria
 Dentro de la memoria los datos se almacenan en cierto orden. Esto define las caracteristicas de los datos, ademas de que tan rapido se puede acceder a ellos, una representacion tradicional seria la siguiente
 
 ![Imagen segmentos de datos](https://media.geeksforgeeks.org/wp-content/uploads/20250122155858092295/Memory-Layout-of-C-Program.webp)
+
+En donde la direccion de memoria mas baja y cercana a la cpu es la de texto, en donde se guarda el script del codigo; mientras que el stack es lo mas alejado, donde se guardan las variables temporales usadas dentro de las funciones. Las secciones tienen cada una un puntero interno que les permite moverse entre ellas de manera agil.
+### Data y BSS
+Partiendo desde la seccion Data, tambien conocida como .data o initialized data esta es donde se almacenan las variables globales, osea que existen fuera de las funciones y permanecen entre procesos, como las variables ```static```. Luego esta la seccion BSS, esta es similar a la seccion Data, pero son variables no inicializadas, osea que no tienen un valor al crearlas.
+### Heap
+La seccion del Heap es una de las mas importantes en C, ya que esta es extremadamente rapida para su busqueda y es donde se guardan los datos de los punteros al crearlos con malloc u otros. La estructura de datos de u Heap se ve de la siguiente manera
+
+![Imagen de heap](https://upload.wikimedia.org/wikipedia/commons/c/c4/Max-Heap-new.svg)
+
+Como es un arbol binario entonces el acto de recorrerlo para encontrar el dato especifico es rapido, pudiendo saltar rapidamente entre niveles, esta es una de las razones por las que el alocar memoria y trabajar con punteros es mas optimo en C que trabajar con variables simples dentro del stack.
+### Stack
+La seccion del stack es donde se guardan las variables dentro de una funcion, ademas que se guardan los punteros en ese segmento (0xffffffff) y las direcciones de las llamadas de funcion con sus parametros. 
+
+## Manejo de memoria
+
+Para manejar la memoria de manera efectiva en C uno tiene que tener en cuenta como se esta guardando y el tamaño de espacio que se usa segun el tipo de dato
+
+### Tamaños tipos de datos
+
+| tipo de dato | Tamaño(Bytes) |
+| --- | --- |
+| int | 4 |
+| char | 1 |
+| float | 4 |
+| double | 8 |
+
+### alocar la memoria
+Uno para poder alocar memoria en C tiene que usar la funcion ```malloc```, esto abre un espacio de memoria y la reserva exclusivamente para esa variable, el argumento que se le entrega al ```malloc``` define que tanto espacio de memoria se reserva, medido siempre en bytes. En caso de usar una estructura de datos personalizada 'aka' ```struct``` entonces uno reserva memoria del tamaño de la suma de sus componentes.
