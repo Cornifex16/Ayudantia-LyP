@@ -73,7 +73,7 @@ Una vez establecida esta primera lista vacia la empezamos a llenar con punteros 
 
 **Nota**: ```memset(grilla[i], '.', 3);``` esta linea de codigo solo se usa para rellenar rapidamente la lista en vez de hacer un ciclo for.
 
-Esto se puede visualizar de la siguiente manera, tenemos nuestra grilla inicial, grilla = [0x00, 0x03, 0x03, 0x06]. En donde cada direccion de memoria apunta a otra lista en memoria, como ya indicamos un puntero de una lista es simplemente la direccion de su primer elemento.
+Esto se puede visualizar de la siguiente manera, tenemos nuestra grilla inicial, grilla = [0x00, 0x03, 0x06]. En donde cada direccion de memoria apunta a otra lista en memoria, como ya indicamos un puntero de una lista es simplemente la direccion de su primer elemento.
 
 Entonces grilla[0] = 0x00 = [0x00, 0x01, 0x02], Siendo cada direccion un caracter, de esta manera es que se puede hacer una matriz o grilla. Una vizualizacion completo de esto seria del tipo:
 
