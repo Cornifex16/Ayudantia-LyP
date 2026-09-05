@@ -34,12 +34,13 @@ void P2() {
 agregar:
     arr[index] = rand() % 100;
     index++;
-    goto agregar;
+    if (index < 10) goto agregar;
 
+    index = 0;
     printf("Array generado: ");
 imprimir:
     printf("%d, ", arr[index]);
     index++;
-    goto imprimir;
+    if (index < 10) goto imprimir;
     printf("\n");
 }

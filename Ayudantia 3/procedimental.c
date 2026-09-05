@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <inttypes.h>
 
 void inicializar_semilla() {
     srand(time(NULL));
@@ -67,5 +68,7 @@ void demostrar_procedimientos() {
 
 int main() {
     demostrar_procedimientos();
+    _Float128 i = 10064897465498515587.5001234569874661;
+    printf("%.20f",i);
     return 0;
 }
