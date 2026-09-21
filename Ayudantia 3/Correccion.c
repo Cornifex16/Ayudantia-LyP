@@ -3,7 +3,7 @@
 #include <time.h>
 
 
-// identifique en que parte de la memoria se guarda que cosa en este codigo.
+// identifique en que parte de la memoria se guarda que cosa en este código.
 int P1() {
     srand(time(NULL));
     int *arr = malloc(10 * sizeof(int));
@@ -26,8 +26,8 @@ int P1() {
     return 0;
 }
 
-// arregle bajo el paradigma estructurado el siguiente codigo, y explique que cambios realizo y porque.
-// notar que el codigo tiene errores, es su trabajo identificar cuales son.
+// arregle bajo el paradigma estructurado el siguiente código, y explique que cambios realizo y porque.
+// notar que el código tiene errores, es su trabajo identificar cuales son.
 void P2() {
     int arr[10];
     int index = 0;

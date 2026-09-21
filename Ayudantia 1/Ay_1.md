@@ -1,15 +1,15 @@
 # Ayudantia 1 (19/08)
 
-Comando para compilar el codigo: ```gcc Variable.c -o variable```
+Comando para compilar el código: ```gcc Variable.c -o variable```
 
-Comando para ejecutar el codigo: ```./variable```
+Comando para ejecutar el código: ```./variable```
 
 ## Datos en Memoria
 Dentro de la memoria los datos se almacenan en cierto orden. Esto define las caracteristicas de los datos, ademas de que tan rapido se puede acceder a ellos, una representacion tradicional seria la siguiente
 
 ![Imagen segmentos de datos](https://media.geeksforgeeks.org/wp-content/uploads/20250122155858092295/Memory-Layout-of-C-Program.webp)
 
-En donde la direccion de memoria mas baja y cercana a la cpu es la de texto, en donde se guarda el script del codigo; mientras que el stack es lo mas alejado, donde se guardan las variables temporales usadas dentro de las funciones. Las secciones tienen cada una un puntero interno que les permite moverse entre ellas de manera agil.
+En donde la direccion de memoria mas baja y cercana a la cpu es la de texto, en donde se guarda el script del código; mientras que el stack es lo mas alejado, donde se guardan las variables temporales usadas dentro de las funciones. Las secciones tienen cada una un puntero interno que les permite moverse entre ellas de manera agil.
 ### Data y BSS
 Partiendo desde la seccion Data, tambien conocida como .data o initialized data esta es donde se almacenan las variables globales, osea que existen fuera de las funciones y permanecen entre procesos, como las variables ```static```. Luego esta la seccion BSS, esta es similar a la seccion Data, pero son variables no inicializadas, osea que no tienen un valor al crearlas.
 ### Heap

@@ -18,7 +18,7 @@ Debe realizar un mini tablero en C,usando structs, matrices y doble punteros. El
 ## Bonus
 uno debe ser capaz de mover el objeto ```@``` con el teclado, para esto se usan la libreria ```termios``` para el movimiento.
 
-Pueden usar este trozo de codigo, que detecta el teclado:
+Pueden usar este trozo de código, que detecta el teclado:
 ```
 char get_input() {
     struct termios oldt, newt;
@@ -46,7 +46,7 @@ Esto quiere decir que guarda 3 bytes de memoria, podemos decir que guarda desde 
 
 Ahora cuando hablamos de matrices generalmente hablamos de listas de listas o listas anidadas, esto sigue siendo igual en C, la diferencia es que ahora añadimos los punteros. Ya vimos que las listas en C son finalmente una lista de direcciones de memoria, osea punteros que apuntan a un valor; entonces cuando nosotros queremos hacer una lista dentro de otrs simplemente hacemos que esa direccion de memoria sea un puntero a otra lista.
 
-Como ejemplo practico usaremos el siguiente codigo.
+Como ejemplo practico usaremos el siguiente código.
 ```
 char **grilla = malloc(3 * sizeof(char *));
     // verificacion de existencia estandar y liberacion de memoria
@@ -71,7 +71,7 @@ la linea char ```**grilla = malloc(3 * sizeof(char *));``` nos entrega nuestras 
 
 Una vez establecida esta primera lista vacia la empezamos a llenar con punteros en vez de elementos, la razon de esta linea ```char *grilla[i] = malloc(3 * sizeof(char));```, que reserva un espacion de memoria equivalente a 3 bytes y guarda su puntero dentro de la direccion ```i``` en la primera lista creada
 
-**Nota**: ```memset(grilla[i], '.', 3);``` esta linea de codigo solo se usa para rellenar rapidamente la lista en vez de hacer un ciclo for.
+**Nota**: ```memset(grilla[i], '.', 3);``` esta linea de código solo se usa para rellenar rapidamente la lista en vez de hacer un ciclo for.
 
 Esto se puede visualizar de la siguiente manera, tenemos nuestra grilla inicial, grilla = [0x00, 0x03, 0x06]. En donde cada direccion de memoria apunta a otra lista en memoria, como ya indicamos un puntero de una lista es simplemente la direccion de su primer elemento.
 
